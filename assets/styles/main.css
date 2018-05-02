@@ -10,3 +10,20 @@
 m-t-lg{
   padding-top: 5px;
 }
+
+.navbar {
+  margin-bottom: 0px;
+}
+.navbar .second{
+  position: relative;
+  min-height: 25px !important;
+  max-height: 25px !important;
+  margin-bottom: 0px;
+  border: 1px solid transparent;
+}
+
+
+.card-img-top {
+  max-height: 200px;
+  max-width: 200px;
+}

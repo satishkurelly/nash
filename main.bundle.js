@@ -97,7 +97,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header (featureSelected)=\"onNavigate($event)\"></app-header>\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<app-header (featureSelected)=\"onNavigate($event)\"></app-header>\n<app-nav></app-nav>\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-1\">\n      <app-adds></app-adds>\n    </div>\n    <div class=\"col-md-9\">\n      <router-outlet></router-outlet>\n    </div>\n    <div class=\"col-md-2\">\n      <app-adds></app-adds>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -172,12 +172,16 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__auth_signin_signin_component__ = __webpack_require__("../../../../../src/app/auth/signin/signin.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__auth_auth_service__ = __webpack_require__("../../../../../src/app/auth/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__auth_auth_guard_service__ = __webpack_require__("../../../../../src/app/auth/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__header_nav_bar_nav_component__ = __webpack_require__("../../../../../src/app/header/nav-bar/nav.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_component_adds_adds_component__ = __webpack_require__("../../../../../src/app/shared/component/adds/adds.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -219,7 +223,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_15__recipes_recipe_start_recipe_start_component__["a" /* RecipeStartComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__recipes_recipe_edit_recipe_edit_component__["a" /* RecipeEditComponent */],
                 __WEBPACK_IMPORTED_MODULE_19__auth_signup_signup_component__["a" /* SignupComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__auth_signin_signin_component__["a" /* SigninComponent */]
+                __WEBPACK_IMPORTED_MODULE_20__auth_signin_signin_component__["a" /* SigninComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__header_nav_bar_nav_component__["a" /* NavBarComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__shared_component_adds_adds_component__["a" /* AddsComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -359,7 +365,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/auth/signin/signin.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\n    <form (ngSubmit)=\"onSignin(f)\" #f=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"email\">Mail</label>\n        <input type=\"email\" id=\"email\" name=\"email\" ngModel class=\"form-control\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input\n          type=\"password\"\n          id=\"password\"\n          name=\"password\"\n          ngModel\n          class=\"form-control\">\n      </div>\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Sign In</button>\n    </form>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"row\">\n  <h2>Login Page</h2>\n  <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\n    <form (ngSubmit)=\"onSignin(f)\" #f=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"email\">Mail</label>\n        <input type=\"email\" id=\"email\" name=\"email\" ngModel class=\"form-control\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input\n          type=\"password\"\n          id=\"password\"\n          name=\"password\"\n          ngModel\n          class=\"form-control\">\n      </div>\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Sign In</button>\n    </form>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -428,7 +434,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/auth/signup/signup.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\n    <form (ngSubmit)=\"onSignup(f)\" #f=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"email\">Mail</label>\n        <input type=\"email\" id=\"email\" name=\"email\" ngModel class=\"form-control\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input\n          type=\"password\"\n          id=\"password\"\n          name=\"password\"\n          ngModel\n          class=\"form-control\">\n      </div>\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Sign Up</button>\n    </form>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"row\">\n  <h2>Signup Page</h2>\n  <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\n    <form (ngSubmit)=\"onSignup(f)\" #f=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"email\">Mail</label>\n        <input type=\"email\" id=\"email\" name=\"email\" ngModel class=\"form-control\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input\n          type=\"password\"\n          id=\"password\"\n          name=\"password\"\n          ngModel\n          class=\"form-control\">\n      </div>\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Sign Up</button>\n    </form>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -479,7 +485,7 @@ var SignupComponent = (function () {
 /***/ "../../../../../src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <a routerLink=\"/\" class=\"navbar-brand\">Nashivile Desi</a>\n    </div>\n\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li routerLinkActive=\"active\"><a routerLink=\"/recipes\">Events</a></li>\n        <li routerLinkActive=\"active\"><a routerLink=\"/shopping-list\">Classifieds</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <ng-template [ngIf]=\"!authService.isAuthenticated()\">\n          <li><a routerLink=\"/signup\">Register</a></li>\n          <li><a routerLink=\"/signin\">Login</a></li>\n        </ng-template>\n\n        <li><a\n          style=\"cursor: pointer;\"\n          (click)=\"onLogout()\"\n          *ngIf=\"authService.isAuthenticated()\">Logout</a></li>\n\n        <li class=\"dropdown\" appDropdown *ngIf=\"authService.isAuthenticated()\">\n          <a style=\"cursor: pointer;\" class=\"dropdown-toggle\" role=\"button\">Manage <span class=\"caret\"></span></a>\n          <ul class=\"dropdown-menu\">\n            <li><a style=\"cursor: pointer;\" (click)=\"onSaveData()\">Save Data</a></li>\n            <li><a style=\"cursor: pointer;\" (click)=\"onFetchData()\">Fetch Data</a></li>\n          </ul>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <a routerLink=\"/\" class=\"navbar-brand\">Nashivile Desi</a>\n    </div>\n\n    <div class=\"collapse navbar-collapse\">\n      <!--<ul class=\"nav navbar-nav\">-->\n        <!--<li routerLinkActive=\"active\"><a routerLink=\"/recipes\">Events</a></li>-->\n        <!--<li routerLinkActive=\"active\"><a routerLink=\"/shopping-list\">Classifieds</a></li>-->\n      <!--</ul>-->\n      <ul class=\"nav navbar-nav navbar-right\">\n        <ng-template [ngIf]=\"!authService.isAuthenticated()\">\n          <li><a routerLink=\"/signup\">Register</a></li>\n          <li><a routerLink=\"/signin\">Login</a></li>\n        </ng-template>\n\n        <li><a\n          style=\"cursor: pointer;\"\n          (click)=\"onLogout()\"\n          *ngIf=\"authService.isAuthenticated()\">Logout</a></li>\n\n        <li class=\"dropdown\" appDropdown *ngIf=\"authService.isAuthenticated()\">\n          <a style=\"cursor: pointer;\" class=\"dropdown-toggle\" role=\"button\">Manage <span class=\"caret\"></span></a>\n          <ul class=\"dropdown-menu\">\n            <li><a style=\"cursor: pointer;\" (click)=\"onSaveData()\">Save Data</a></li>\n            <li><a style=\"cursor: pointer;\" (click)=\"onFetchData()\">Fetch Data</a></li>\n          </ul>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -529,6 +535,46 @@ var HeaderComponent = (function () {
             __WEBPACK_IMPORTED_MODULE_2__auth_auth_service__["a" /* AuthService */]])
     ], HeaderComponent);
     return HeaderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/header/nav-bar/nav.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-default second\">\n  <div class=\"container-fluid\">\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li routerLinkActive=\"active\"><a routerLink=\"/recipes\">Events</a></li>\n        <li routerLinkActive=\"active\"><a routerLink=\"/shopping-list\">Classifieds</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/header/nav-bar/nav.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavBarComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NavBarComponent = (function () {
+    function NavBarComponent() {
+    }
+    NavBarComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-nav',
+            template: __webpack_require__("../../../../../src/app/header/nav-bar/nav.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], NavBarComponent);
+    return NavBarComponent;
 }());
 
 
@@ -934,7 +980,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/recipes/recipe-start/recipe-start.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Please select a Recipe!</h3>\n"
+module.exports = "<h3>Please select a item!</h3>\n"
 
 /***/ }),
 
@@ -1022,11 +1068,11 @@ var RecipeService = (function () {
         this.slService = slService;
         this.recipesChanged = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["b" /* Subject */]();
         this.recipes = [
-            new __WEBPACK_IMPORTED_MODULE_2__recipe_model__["a" /* Recipe */]('Tasty Schnitzel', 'A super-tasty Schnitzel - just awesome!', 'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG', [
+            new __WEBPACK_IMPORTED_MODULE_2__recipe_model__["a" /* Recipe */]('Job Posting', 'A super-tasty Schnitzel - just awesome!', 'http://hudsonarealibrary.org/wp-content/uploads/2012/04/jobs.jpg', [
                 new __WEBPACK_IMPORTED_MODULE_3__shared_ingredient_model__["a" /* Ingredient */]('Meat', 1),
                 new __WEBPACK_IMPORTED_MODULE_3__shared_ingredient_model__["a" /* Ingredient */]('French Fries', 20)
             ]),
-            new __WEBPACK_IMPORTED_MODULE_2__recipe_model__["a" /* Recipe */]('Big Fat Burger', 'What else you need to say?', 'https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg', [
+            new __WEBPACK_IMPORTED_MODULE_2__recipe_model__["a" /* Recipe */]('Event Management', 'What else you need to say?', 'http://specialeventsinstitute.com/wp-content/uploads/2013/12/A-Career-in-Events-copy.png', [
                 new __WEBPACK_IMPORTED_MODULE_3__shared_ingredient_model__["a" /* Ingredient */]('Buns', 2),
                 new __WEBPACK_IMPORTED_MODULE_3__shared_ingredient_model__["a" /* Ingredient */]('Meat', 1)
             ])
@@ -1123,6 +1169,46 @@ var RecipesComponent = (function () {
         __metadata("design:paramtypes", [])
     ], RecipesComponent);
     return RecipesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/component/adds/adds.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card\" style=\"max-width: 10rem;\">\n  <img class=\"card-img-top\" src=\"https://upload.wikimedia.org/wikipedia/en/6/68/Bharat_Ane_Nenu_poster.jpg\" alt=\"Card image cap\">\n</div>\n\n<div class=\"card\" style=\"max-width: 10rem;\">\n  <img class=\"card-img-top\" src=\"https://upload.wikimedia.org/wikipedia/en/5/5d/Rangasthalam.jpg\" alt=\"Card image cap\">\n</div>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/component/adds/adds.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AddsComponent = (function () {
+    function AddsComponent() {
+    }
+    AddsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-adds',
+            template: __webpack_require__("../../../../../src/app/shared/component/adds/adds.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], AddsComponent);
+    return AddsComponent;
 }());
 
 

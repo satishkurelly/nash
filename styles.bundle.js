@@ -97,7 +97,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".navbar-default {\r\n  background-color: darksalmon !important;\r\n}\r\n\r\n.navbar {\r\n  border-radius: 0px;\r\n}\r\n\r\n\r\nm-t-lg{\r\n  padding-top: 5px;\r\n}\r\n", ""]);
+exports.push([module.i, ".navbar-default {\r\n  background-color: darksalmon !important;\r\n}\r\n\r\n.navbar {\r\n  border-radius: 0px;\r\n}\r\n\r\n\r\nm-t-lg{\r\n  padding-top: 5px;\r\n}\r\n\r\n.navbar {\r\n  margin-bottom: 0px;\r\n}\r\n.navbar .second{\r\n  position: relative;\r\n  min-height: 25px !important;\r\n  max-height: 25px !important;\r\n  margin-bottom: 0px;\r\n  border: 1px solid transparent;\r\n}\r\n\r\n\r\n.card-img-top {\r\n  max-height: 200px;\r\n  max-width: 200px;\r\n}\r\n", ""]);
 
 // exports
 
